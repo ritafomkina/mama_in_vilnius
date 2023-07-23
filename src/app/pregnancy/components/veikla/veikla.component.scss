@@ -1,0 +1,11 @@
+@import "../../../../styles.scss";
+
+:host{
+  padding: 10px;
+  @include flex(column, flex-start, flex-start);
+  @include font(#000000, 400, 16px, 24px);
+  max-width: 800px;
+}
+h2{
+  padding-left: 24px;
+}

@@ -1,0 +1,17 @@
+@import "../styles.scss";
+
+:host {
+position: relative;
+}
+
+@media screen and (min-width: 400px) and (max-width: 1054px) {
+  .desktop-content{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1055px) and (max-width: 2000px) {
+  .mobile-content{
+    display: none;
+  }
+}

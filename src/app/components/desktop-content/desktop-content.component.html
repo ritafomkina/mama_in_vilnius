@@ -1,0 +1,10 @@
+<app-section-separator [section]="sections[0]" id="pregnancy"></app-section-separator>
+    <app-pregnancy-section></app-pregnancy-section>
+    <app-section-separator [section]="sections[1]" id="birth"></app-section-separator>
+    <app-birth-section></app-birth-section>
+    <app-section-separator [section]="sections[2]" id="toddler"></app-section-separator>
+    <app-toddler-section></app-toddler-section>
+    <app-section-separator [section]="sections[3]" id="links"></app-section-separator>
+    <app-links-section></app-links-section>
+    <app-dialog-template *ngIf="dialog" class="dialog"></app-dialog-template>
+    <div class="shadow" *ngIf="dialog"></div>

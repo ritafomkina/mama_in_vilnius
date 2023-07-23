@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Inter/static/Inter-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/Inter/static/Inter-Medium.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/font/Inter/static/Inter-SemiBold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Inter/static/Inter-Bold.ttf") format('truetype');
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100vw;
+  height: 100%;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,h2,h3,h4,p {
+  margin: 0;
+}
+
+body {
+  min-width: 100%;
+  background-color: #FFFFFF;
+  font-family: "Inter", 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #FBFBFB 0%, #FAF3FC 100%);
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+@mixin font ($color, $weight: 400, $size: 18px, $heigth: 14px) {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $heigth;
+  color: $color;
+}
+
+@mixin flex ( $direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+$colorBlue: #170C58;
+$colorGrey: #282828;
+
+details {
+  padding: 5px 20px;
+}
+
+.text-container {
+  margin: 10px 0px;
+}
+
+.text {
+  margin: 10px 0px;
+}
+
+.link {
+  position: relative;
+  color: #000000;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(47, 43, 43);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.link:hover,
+.link:visited {
+  color: #170C58;
+}
+
+.level-three-title{
+  @include font(#282828, 400, 18px, 23px);
+}

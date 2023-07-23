@@ -1,0 +1,7 @@
+
+  <div *ngFor="let card of cards" class="info-container">
+      <img src="{{ card.imgSRC }}" alt="pregnancy">
+      <h4 class="info-title">{{ card.title }}</h4>
+      <p class="info-desc">{{ card.description }}</p>
+      <button mat-raised-button class="info-link" color="primary" (click)="openDialog($event, 'pregnancy', card.topic)">Узнать подробнее</button>
+  </div>

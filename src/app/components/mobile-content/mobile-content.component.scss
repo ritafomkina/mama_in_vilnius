@@ -1,0 +1,68 @@
+@import "../../../styles.scss";
+
+:host {
+  padding: 50px 30px;
+  @include flex(column, flex-start, center);
+  row-gap: 10px;
+  position: relative;
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.shadow {
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  overflow: auto;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background: rgba(41, 41, 41, 0.6);
+}
+
+.actions {
+  align-self: end;
+  padding-right: 10px;
+}
+.close-btn {
+  width: 100px;
+  height: 50px;
+  margin-left: 24px;
+}
+.subtitle {
+  list-style: none;
+  @include flex(row, flex-start, flex-start);
+  column-gap: 10px;
+  text-align: start;
+}
+.subtitle::before {
+  content: "\25CF";
+}
+
+.titles-container {
+  @include flex(row, center, center);
+}
+.title {
+  @include font(#170c58, 600, 25px, 125%);
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.subtitles-container {
+  padding: 10px 0px 10px 20px;
+  @include font(#170c58, 400, 23px, 24px);
+  @include flex(column, flex-start, flex-start);
+  row-gap: 25px;
+}

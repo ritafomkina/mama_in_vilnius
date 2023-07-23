@@ -1,0 +1,35 @@
+@import "../../../styles.scss";
+
+:host {
+  @include flex(row, center, center);
+  flex-wrap: wrap;
+  column-gap: 73px;
+  row-gap: 70px;
+}
+
+.info-container {
+  @include flex(column, flex-start, space-between);
+  width: 350px;
+  height: 510px;
+}
+img {
+  margin-bottom: 10px;
+  width: 350px;
+  height: 250px;
+}
+.info-title {
+  @include font(#170C58, 600px, 24px, 29px);
+  text-align: start;
+  margin: 0;
+}
+.info-desc {
+  @include font(#282828, 400px, 18px, 23px);
+}
+.info-link {
+  @include flex(row, center, center);
+  @include font(#FFFFFF, 600px, 17px, 24px);
+  width: 320px;
+  height: 67px;
+  margin-top: 10px;
+  background: linear-gradient(45.72deg, #4E0F97 16.58%, #6442D3 61.4%, #BAB4E9 103.95%);
+}

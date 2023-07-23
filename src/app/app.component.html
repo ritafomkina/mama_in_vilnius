@@ -1,0 +1,6 @@
+<div (click)="closeDialog($event)">
+  <app-header></app-header>
+  <app-start-section></app-start-section>
+  <app-desktop-content class="desktop-content" *ngIf="!isMobileMode"></app-desktop-content>
+  <app-mobile-content class="mobile-content" *ngIf="isMobileMode"></app-mobile-content>
+</div>

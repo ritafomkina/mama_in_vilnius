@@ -1,0 +1,46 @@
+<details class="titles-container">
+  <summary class="title" (click)="openSection('pregnancy')">Беременность</summary>
+  <ul class="subtitles-container">
+    <li *ngFor="let section of pregnancyData">
+      <button class="subtitle" (click)="openDialog($event, 'pregnancy', section.topic)">{{section.title}}
+        <router-outlet name={{section.topic}}></router-outlet>
+      </button>
+    </li>
+  </ul>
+</details>
+
+<details class="titles-container">
+  <summary class="title" (click)="openSection('birth')">Малыш родился</summary>
+  <ul class="subtitles-container">
+    <li *ngFor="let section of birthData">
+      <button class="subtitle" (click)="openDialog($event, 'birth', section.topic)">{{section.title}}
+        <router-outlet name={{section.topic}}></router-outlet>
+      </button>
+    </li>
+  </ul>
+</details>
+<details class="titles-container">
+  <summary class="title" (click)="openSection('toddler')">Тоддлер</summary>
+  <ul class="subtitles-container">
+    <li *ngFor="let section of toddlerData">
+      <button class="subtitle" (click)="openDialog($event, 'toddler', section.topic)">{{section.title}}
+        <router-outlet name={{section.topic}}></router-outlet>
+      </button>
+    </li>
+  </ul>
+
+</details>
+<details class="titles-container">
+  <summary class="title" (click)="openSection('links')">Полезные ссылки</summary>
+  <ul class="subtitles-container">
+    <li *ngFor="let section of linksData">
+      <button class="subtitle" (click)="openDialog($event, 'links', section.topic)">{{section.title}}
+        <router-outlet name={{section}}></router-outlet>
+      </button>
+    </li>
+  </ul>
+</details>
+
+
+<app-dialog-template *ngIf="dialog" class="dialog"></app-dialog-template>
+<div class="shadow" *ngIf="dialog"></div>

@@ -1,0 +1,109 @@
+@import "../../../../styles.scss";
+
+:host {
+  @include flex(row, center, space-between);
+    min-width: 100%;
+    max-width: 1320px;
+    height: 120px;
+    padding: 0px 137px;
+    background: linear-gradient(90deg, #FBFBFB 0%, #FAF3FC 100%);
+  }
+
+
+  .logo {
+    @include font(#FFFFFF, 700, 20px, 24px);
+    position: relative;
+    text-transform: uppercase;
+  z-index: 2;
+  }
+
+  .logo::before {
+    position: absolute;
+    content: "";
+    background-image: url('./../../../../assets/logo.png');
+    width: 381px;
+    height: 157px;
+    z-index: -1;
+    top: -49px;
+    left: -90px;
+  }
+
+  .logo:hover {
+    cursor: pointer;
+  }
+
+  .header-nav {
+    @include font(#212121, 400, 18px, 23px);
+  }
+
+  .header-list {
+    @include flex(row, center, space-between);
+    column-gap: 50px;
+  }
+
+  .nav-item{
+    position: relative;
+  }
+  .nav-item:hover {
+    cursor: pointer;
+  }
+
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgb(47, 43, 43);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+  }
+
+  .nav-item:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+
+  @media screen and (min-width: 1155px) and (max-width: 1265px) {
+    .header-list {
+      column-gap: 30px;
+    }
+    :host {
+        padding: 0px 110px;
+    }
+  }
+
+  @media screen and (min-width: 1055px) and (max-width: 1154px) {
+    .header-list {
+      column-gap: 20px;
+    }
+    :host {
+      padding-left: 100px;
+      padding-right: 50px;
+    }
+  }
+
+  @media screen and (min-width: 400px) and (max-width: 1054px) {
+    :host{
+      height: 90px;
+      padding: 0px 10px;
+    }
+    .header-nav {
+      display: none;
+    }
+    .logo::before {
+      background-image: url('./../../../../assets/logo-mobile.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 370px;
+      height: 100px;
+top: -35px;
+left: -10px;
+    }
+    .logo {
+      @include font(#FFFFFF, 600, 14px, 20px);
+    }
+  }

@@ -1,0 +1,21 @@
+@import "../../../styles.scss";
+
+:host {
+  width: 100%;
+  @include flex(row, center, flex-start);
+  column-gap: 30px;
+  // margin-left: 137px;
+  padding: 60px 0px 60px 60px;
+}
+
+.title {
+  @include font(#170C58, 600, 40px, 45px);
+}
+
+.line {
+  display: block;
+height: 2px;
+background: #170C58;
+min-width: 70%;
+// max-width: 100%;
+}

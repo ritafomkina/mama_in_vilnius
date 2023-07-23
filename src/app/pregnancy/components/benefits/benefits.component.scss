@@ -1,0 +1,36 @@
+@import "../../../../styles.scss";
+
+:host{
+  @include flex(column, flex-start, flex-start);
+  @include font(#000000, 400, 16px, 24px);
+  padding: 15px;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1054px) {
+  :host {
+    width: 900px;
+    max-height: 700px;
+  }
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 899px) {
+  :host {
+    width: 800px;
+    max-height: 700px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  :host {
+    width: 600px;
+    max-height: 700px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
+  :host {
+    width: 400px;
+    max-height: 700px;
+  }
+}
