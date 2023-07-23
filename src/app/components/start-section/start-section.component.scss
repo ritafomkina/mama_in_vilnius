@@ -46,7 +46,7 @@ max-height: 100%;
     align-items: flex-end;
   }
 }
-@media screen and (min-width: 400px) and (max-width: 1054px) {
+@media screen and (min-width: 350px) and (max-width: 1054px) {
   :host {
     // background: linear-gradient(90deg, #FBFBFB 0%, #FAF3FC 100%);
     padding: 50px 0px 0px 30px;
@@ -75,9 +75,9 @@ max-height: 100%;
   }
 }
 
-@media screen and (min-width: 400px) and (max-width: 499px) {
+@media screen and (min-width: 350px) and (max-width: 499px) {
   .start-img img{
-    max-width: 400px;
+    max-width: 350px;
     max-height: 100%;
   }
 }

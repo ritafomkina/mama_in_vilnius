@@ -23,7 +23,7 @@ img {
   margin: 0;
 }
 .info-desc {
-  @include font(#282828, 400px, 18px, 23px);
+  @include font(#282828, 350px, 18px, 23px);
 }
 .info-link {
   @include flex(row, center, center);
