@@ -5,7 +5,8 @@ import ChooseInsuranseComponent from '../shared/components/choose-insurance/choo
 import BenefitsComponent from './components/benefits/benefits.component';
 import EmploymentComponent from './components/employment/employment.component';
 import HospitalsComponent from './components/hospitals/hospitals.component';
-import PriceComponent from './components/price/price.component';
+import PriceBELComponent from './components/price-bel/price-bel.component';
+import PriceUAComponent from './components/price-ua/price-ua.component';
 import RegistrationBELComponent from './components/registration-bel/registration-bel.component';
 import RegistrationUAComponent from './components/registration-ua/registration-ua.component';
 import VeiklaComponent from './components/veikla/veikla.component';
@@ -22,8 +23,11 @@ const routes: Routes = [
     path: 'hospitals', component: HospitalsComponent,
   },
   {
-    path: 'price', component: PriceComponent,
+    path: 'price', component: ChooseCountryDialogComponent,
   },
+  { path: 'price/UA', component: PriceUAComponent },
+  { path: 'price/BEL', component: PriceBELComponent },
+  { path: 'price/RU', component: PriceBELComponent },
   { path: 'insurance', component: ChooseInsuranseComponent },
   { path: 'insurance/employment', component: EmploymentComponent },
   { path: 'insurance/veikla', component: VeiklaComponent },
