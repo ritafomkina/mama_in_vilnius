@@ -36,6 +36,12 @@ export default class LinksDataService {
       imgSRC: '',
     },
     {
+      topic: 'doula',
+      title: 'Доулы, консультанты по ГВ',
+      description: '',
+      imgSRC: '',
+    },
+    {
       topic: 'feedbacks',
       title: 'Отзывы о врачах в Литве',
       description: '',
@@ -53,7 +59,6 @@ export default class LinksDataService {
       description: '',
       imgSRC: '',
     },
-
   ];
 
   public getData() {

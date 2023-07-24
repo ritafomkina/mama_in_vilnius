@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'dentists', component: DentistComponent,
   },
   {
-    path: 'doulas', component: DoulasComponent,
+    path: 'doula', component: DoulasComponent,
   },
   {
     path: 'feedbacks', component: FeedBacksComponent,
