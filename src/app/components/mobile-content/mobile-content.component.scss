@@ -48,7 +48,7 @@
   @include flex(row, center, center);
 }
 .title {
-  @include font(#170c58, 600, 25px, 125%);
+  @include font($colorBlue, 600, 25px, 125%);
   margin-bottom: 20px;
 }
 
@@ -62,7 +62,7 @@ button {
 
 .subtitles-container {
   padding: 10px 0px 10px 20px;
-  @include font(#170c58, 400, 23px, 24px);
+  @include font($colorBlue, 400, 23px, 24px);
   @include flex(column, flex-start, flex-start);
   row-gap: 25px;
 }

@@ -18,12 +18,6 @@ export default class LinksDataService {
       imgSRC: '',
     },
     {
-      topic: 'reuse',
-      title: 'Б/у вещи',
-      description: '',
-      imgSRC: '',
-    },
-    {
       topic: 'second-hands',
       title: 'Секонд-хенды и ярмарки',
       description: '',

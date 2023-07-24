@@ -13,12 +13,12 @@
 }
 
 .start-title {
-@include font(#170C58, 600, 35px, 50px);
+@include font($colorBlue, 600, 35px, 50px);
 text-transform: uppercase;
 }
 
 .start-text {
-  @include font(#000000, 400, 16px, 24px);
+  @include font($colorBlack, 400, 16px, 24px);
   max-width: 636px;
 }
 
@@ -58,7 +58,7 @@ max-height: 100%;
     margin-top: 0;
   }
   .start-text {
-    @include font(#000000, 400, 16px, 24px);
+    @include font($colorBlack, 400, 16px, 24px);
     max-width: 100%;
     margin-right: 30px;
   }

@@ -1,0 +1,20 @@
+@import "../../../styles.scss";
+
+:host {
+  align-self: flex-end;
+  background: linear-gradient(90deg, #C4D0E7 0%, #90ACD1 100%);
+  @include flex(row, center, center);
+  @include font($colorBlue, 400, 18px, 24px);
+  height: 70px;
+}
+
+.error-link {
+  font-style: normal;
+}
+
+@media screen and (min-width: 350px) and (max-width: 768px) {
+:host {
+  height: 50px;
+  font-size: 14px;
+}
+}

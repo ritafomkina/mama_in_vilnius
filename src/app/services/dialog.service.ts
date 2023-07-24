@@ -56,5 +56,6 @@ export default class DialogService {
     this.isOpened();
     document.body.classList.add('noscroll');
     this.router.navigate([root.section, root.topic]);
+    // this.router.navigate([root.section], { queryParams: { card: root.topic } });
   }
 }

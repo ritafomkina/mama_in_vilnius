@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import DialogService from 'src/app/services/dialog.service';
 import { LocationStrategy } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import ModeService from './services/mode.service';
 
 @Component({
@@ -15,6 +15,7 @@ export default class AppComponent implements OnInit {
   constructor(
     private dialogService: DialogService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private locationStrategy: LocationStrategy,
     private mode: ModeService,
   ) {
@@ -24,7 +25,18 @@ export default class AppComponent implements OnInit {
 
   public dialog = false;
 
+  public error = false;
+
   ngOnInit(): void {
+    if (window.location.href.includes('pregnancy')
+       || window.location.href.includes('birth')
+       || window.location.href.includes('toddler')
+       || window.location.href.includes('links')) {
+      this.dialogService.isOpened();
+    }
+    if (window.location.href.length > 31) {
+      this.dialogService.isOpened();
+    }
     this.dialogService.currentDialogStatus.subscribe((status) => {
       this.dialog = status;
     });

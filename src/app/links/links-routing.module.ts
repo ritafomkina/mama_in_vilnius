@@ -8,7 +8,6 @@ import FeedBacksComponent from './components/feed-backs/feed-backs.component';
 import HelpinLTsComponent from './components/helpin-lt/helpin-lt.component';
 import HelpinUAComponent from './components/helpin-ua/helpin-ua.component';
 import KidsGoodsComponent from './components/kids-goods/kids-goods.component';
-import ReuseComponent from './components/reuse/reuse.component';
 import SecondHandsComponent from './components/second-hands/second-hands.component';
 
 const routes: Routes = [
@@ -35,9 +34,6 @@ const routes: Routes = [
   },
   {
     path: 'kids-goods', component: KidsGoodsComponent,
-  },
-  {
-    path: 'reuse', component: ReuseComponent,
   },
   {
     path: 'second-hands', component: SecondHandsComponent,

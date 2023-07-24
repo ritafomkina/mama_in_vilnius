@@ -11,7 +11,6 @@ import FeedBacksComponent from './components/feed-backs/feed-backs.component';
 import HelpinLTsComponent from './components/helpin-lt/helpin-lt.component';
 import HelpinUAComponent from './components/helpin-ua/helpin-ua.component';
 import KidsGoodsComponent from './components/kids-goods/kids-goods.component';
-import ReuseComponent from './components/reuse/reuse.component';
 import SecondHandsComponent from './components/second-hands/second-hands.component';
 
 @NgModule({
@@ -24,7 +23,6 @@ import SecondHandsComponent from './components/second-hands/second-hands.compone
     HelpinLTsComponent,
     HelpinUAComponent,
     KidsGoodsComponent,
-    ReuseComponent,
     SecondHandsComponent,
   ],
   imports: [

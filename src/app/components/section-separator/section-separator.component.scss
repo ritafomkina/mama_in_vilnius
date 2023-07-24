@@ -9,13 +9,13 @@
 }
 
 .title {
-  @include font(#170C58, 600, 40px, 45px);
+  @include font($colorBlue, 600, 40px, 45px);
 }
 
 .line {
   display: block;
 height: 2px;
-background: #170C58;
+background: $colorBlue;
 min-width: 70%;
 // max-width: 100%;
 }

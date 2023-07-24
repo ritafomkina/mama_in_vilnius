@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './hospitals.component.html',
   styleUrls: ['./hospitals.component.scss'],
 })
+
 export default class HospitalsComponent {
 
 }

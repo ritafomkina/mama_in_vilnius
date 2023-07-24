@@ -13,6 +13,10 @@ import VeiklaComponent from './components/veikla/veikla.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: ChooseCountryDialogComponent,
+  },
+  {
     path: 'registration',
     component: ChooseCountryDialogComponent,
   },

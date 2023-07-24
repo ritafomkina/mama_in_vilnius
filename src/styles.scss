@@ -90,22 +90,27 @@ body.noscroll {
 
 $colorBlue: #170C58;
 $colorGrey: #282828;
+$colorBlack: #000000;
 
 details {
-  padding: 5px 20px;
+  @include flex(column, flex-start, flex-start);
+  row-gap: 40px;
 }
 
 .text-container {
   margin: 10px 0px;
+  @include flex(column, flex-start, flex-start);
+  row-gap: 5px;
 }
 
 .text {
-  margin: 10px 0px;
+  margin-top: 5px;
 }
 
 .link {
   position: relative;
-  color: #000000;
+  color: $colorBlue;
+  font-style: oblique;
 }
 
 .link::after {
@@ -126,11 +131,6 @@ details {
   transform-origin: bottom left;
 }
 
-.link:hover,
-.link:visited {
-  color: #170C58;
-}
-
-.level-three-title{
-  @include font(#282828, 400, 18px, 23px);
+.card-title{
+  @include font(#170C58, 400, 18px, 23px);
 }
