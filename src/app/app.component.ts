@@ -34,9 +34,6 @@ export default class AppComponent implements OnInit {
        || window.location.href.includes('links')) {
       this.dialogService.isOpened();
     }
-    if (window.location.href.length > 31) {
-      this.dialogService.isOpened();
-    }
     this.dialogService.currentDialogStatus.subscribe((status) => {
       this.dialog = status;
     });
