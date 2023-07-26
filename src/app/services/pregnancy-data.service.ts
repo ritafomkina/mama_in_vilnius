@@ -14,13 +14,13 @@ export default class PregnancyDataService {
     {
       topic: 'hospitals',
       title: 'Роддома Вильнюса',
-      description: 'Отзывы, список вещей в роддом, партнерские роды, прививки в роддоме...',
+      description: 'Отзывы, список вещей в роддом, партнерские роды, прививки в роддоме',
       imgSRC: './../../../assets/pregnancy-imgs/luana-azevedo-2_pncwO-AwY-unsplash.jpg',
     },
     {
       topic: 'price',
       title: 'Стоимость родов',
-      description: 'Здесь вы можете найти приблизительную стоимость родов в роддомах Вильнюса',
+      description: 'Сколько стоят роды и кто может родить бесплатно',
       imgSRC: './../../../assets//pregnancy-imgs/patricia-prudente--P2djqAwM8U-unsplash.jpg',
     },
     {

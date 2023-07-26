@@ -49,13 +49,13 @@ export default class LinksDataService {
     },
     {
       topic: 'helpin-lt',
-      title: 'Помочь мамам и деткам из Украины в Литве',
+      title: 'Помощь мамам из Украины в Литве',
       description: '',
       imgSRC: '',
     },
     {
       topic: 'helpin-ua',
-      title: 'Помочь мамам в Украине',
+      title: 'Помочь',
       description: '',
       imgSRC: '',
     },

@@ -13,20 +13,20 @@ export default class ToddlerDataService {
     },
     {
       topic: 'kindergarten-price',
-      title: 'Сколько стоит сад',
-      description: 'И как его оплачивать',
+      title: 'Сколько стоит детский сад',
+      description: 'Стоимость государственных и частных садов, где искать счета и как их оплачивать',
       imgSRC: './../../../assets/toddler-imgs/kelly-sikkema-CbZC2KVnK8s-unsplash.jpg',
     },
     {
       topic: 'kindergarten-application',
       title: 'Как написать заявление в сад',
-      description: 'А также о переводе из одного сада в другой',
+      description: 'Куда его отправить, как перевестись из одного сада в другой',
       imgSRC: './../../../assets/toddler-imgs/erika-fletcher-YfNWGrQI3a4-unsplash.jpg',
     },
     {
       topic: 'kindergarten-documents',
       title: 'Какие документы нужны для сада',
-      description: 'Кого страхует Содра',
+      description: 'И каких врачей нужно пройти, чтобы ребенка приняли в сад',
       imgSRC: './../../../assets/toddler-imgs/sigmund-TJxotQTUr8o-unsplash.jpg',
     },
     {
@@ -44,19 +44,19 @@ export default class ToddlerDataService {
     {
       topic: 'kids-entertainment',
       title: 'Развлечения для малыша',
-      description: 'Игровые зоны, кафе с детскими комнатами',
+      description: 'Где отметить торжество: игровые зоны и кафе с детскими комнатами',
       imgSRC: './../../../assets/toddler-imgs/olivia-bauso-VQLyz0CpVFM-unsplash.jpg',
     },
     {
       topic: 'kids-activities',
       title: 'Развитие малыша',
-      description: 'Творческие занятия и спортивные кружки в Вильнюе',
+      description: 'Творческие занятия и спортивные кружки в Вильнюсе',
       imgSRC: './../../../assets/toddler-imgs/marisa-howenstine-Cq9slNxV8YU-unsplash.jpg',
     },
     {
       topic: 'kids-pools',
       title: 'Бассейны для малышей',
-      description: 'Адреса и контакты',
+      description: 'Адреса, контакты',
       imgSRC: './../../../assets/toddler-imgs/lavi-perchik-ksGmUF1aE2I-unsplash.jpg',
     },
   ];
