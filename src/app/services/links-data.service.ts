@@ -55,7 +55,7 @@ export default class LinksDataService {
     },
     {
       topic: 'helpin-ua',
-      title: 'Помочь',
+      title: 'Помочь мамам из Украины в Литве',
       description: '',
       imgSRC: '',
     },

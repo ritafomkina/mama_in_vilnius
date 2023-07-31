@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import ErrorPageComponent from './shared/components/error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -19,10 +18,6 @@ const routes: Routes = [
     path: 'links',
     loadChildren: () => import('./links/links.module').then((m) => m.default),
   },
-  // {
-  //   path: '**',
-  //   component: ErrorPageComponent,
-  // },
 ];
 
 @NgModule({
