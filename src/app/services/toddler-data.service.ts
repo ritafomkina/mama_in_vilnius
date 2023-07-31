@@ -37,8 +37,8 @@ export default class ToddlerDataService {
     },
     {
       topic: 'kids-money',
-      title: 'Как оформить детские деньги',
-      description: 'Инструкция по оформлению выплаты 80 евро на детей до 18 лет',
+      title: 'Как оформить выплату на ребенка',
+      description: 'Инструкция по оформлению выплаты 85.75 евро на детей до 18 лет',
       imgSRC: './../../../assets/toddler-imgs/aditya-romansa-5zp0jym2w9M-unsplash.jpg',
     },
     {
