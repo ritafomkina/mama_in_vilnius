@@ -12,6 +12,7 @@ import KidsActivitiesComponent from './components/kids-activities/kids-activitie
 import KidsEntertainmentComponent from './components/kids-entertainment/kids-entertainment.component';
 import KidsPoolstComponent from './components/kids-pools/kids-pools.component';
 import KidsMoneyComponent from './components/kids-money/kids-money.component';
+import PlaygroundsComponent from './components/playgrounds/playgrounds.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import KidsMoneyComponent from './components/kids-money/kids-money.component';
     KidsEntertainmentComponent,
     KidsPoolstComponent,
     KidsMoneyComponent,
+    PlaygroundsComponent,
   ],
   imports: [
     CommonModule,

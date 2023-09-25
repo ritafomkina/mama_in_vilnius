@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import LinksService from 'src/app/services/links-data.service';
-import SectionNameService from '../../services/section-name.service';
 import DialogService from '../../services/dialog.service';
 
 @Component({
@@ -11,9 +9,7 @@ import DialogService from '../../services/dialog.service';
 })
 export default class LinksSectionComponent {
   constructor(
-    private router: Router,
     private dialogService: DialogService,
-    private sectionName: SectionNameService,
     private linksServise: LinksService,
   ) {}
 

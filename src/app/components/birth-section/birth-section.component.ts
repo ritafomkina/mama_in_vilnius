@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import BirthDataService from '../../services/birth-data.service';
 import DialogService from '../../services/dialog.service';
-import SectionNameService from '../../services/section-name.service';
 
 @Component({
   selector: 'app-birth-section',
@@ -11,9 +9,7 @@ import SectionNameService from '../../services/section-name.service';
 })
 export default class BirthSectionComponent {
   constructor(
-    private router: Router,
     private dialogService: DialogService,
-    private sectionName: SectionNameService,
     private dataService: BirthDataService,
   ) {}
 

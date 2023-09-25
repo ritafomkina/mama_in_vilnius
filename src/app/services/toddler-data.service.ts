@@ -56,8 +56,14 @@ export default class ToddlerDataService {
     {
       topic: 'kids-pools',
       title: 'Бассейны для малышей',
-      description: 'Адреса, контакты',
+      description: 'Адреса и контакты',
       imgSRC: './../../../assets/toddler-imgs/lavi-perchik-ksGmUF1aE2I-unsplash.jpg',
+    },
+    {
+      topic: 'playgrounds',
+      title: 'Классные детские площадки',
+      description: 'Адреса и фотографии',
+      imgSRC: './../../assets/toddler-imgs/rashid-sadykov-JUPKydbR6q0-unsplash.jpg',
     },
   ];
 
