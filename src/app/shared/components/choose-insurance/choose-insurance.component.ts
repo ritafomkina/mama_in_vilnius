@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
-import DialogService from '../../../services/dialog.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choose-insurance',
@@ -11,9 +10,7 @@ import DialogService from '../../../services/dialog.service';
 export default class ChooseInsuranseComponent {
   constructor(
     private router: Router,
-    private routerParams: ActivatedRoute,
     public dialog: MatDialog,
-    private dialogService: DialogService,
 
   ) {}
 

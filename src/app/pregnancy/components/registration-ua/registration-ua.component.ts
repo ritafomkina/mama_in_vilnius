@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './registration-ua.component.html',
   styleUrls: ['./registration-ua.component.scss'],
 })
+
 export default class RegistrationUAComponent {
 
 }

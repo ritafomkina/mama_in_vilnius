@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import DialogService from 'src/app/services/dialog.service';
-import SectionNameService from 'src/app/services/section-name.service';
 
 @Component({
   selector: 'app-choose-country-dialog',
@@ -11,7 +10,6 @@ import SectionNameService from 'src/app/services/section-name.service';
 export default class ChooseCountryDialogComponent implements OnInit {
   constructor(
     private router: Router,
-    private sectionName: SectionNameService,
     private doalogService: DialogService,
   ) {}
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import DialogService from 'src/app/services/dialog.service';
 import { LocationStrategy } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import ModeService from './services/mode.service';
 
 @Component({
@@ -15,7 +15,6 @@ export default class AppComponent implements OnInit {
   constructor(
     private dialogService: DialogService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private locationStrategy: LocationStrategy,
     private mode: ModeService,
   ) {

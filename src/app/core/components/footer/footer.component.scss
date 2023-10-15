@@ -1,0 +1,38 @@
+@import "../../../../styles.scss";
+
+:host {
+  align-self: flex-end;
+  background: linear-gradient(90deg, #C4D0E7 0%, #90ACD1 100%);
+  @include flex(row, center, flex-start);
+  position: relative;
+  @include font($colorBlue, 400, 18px, 24px);
+  height: 70px;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+.error-link {
+  flex: 0 1 auto;
+  position: absolute;
+  font-style: normal;
+  align-self:center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.site-info-container {
+  flex: 0 1 auto;
+  margin-left: auto;
+  color: black;
+  font-size: 14px;
+  a {
+    color: black;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 768px) {
+:host {
+  height: 50px;
+  font-size: 14px;
+}
+}

@@ -16,6 +16,8 @@ export default class DesktopContentComponent implements OnInit {
 
   public dialog = false;
 
+  public dialogText = '';
+
   ngOnInit(): void {
     this.dialogService.currentDialogStatus.subscribe((status) => {
       this.dialog = status;

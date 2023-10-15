@@ -17,7 +17,6 @@ import LinksSectionComponent from './components/links-section/links-section.comp
 import DesktopContentComponent from './components/desktop-content/desktop-content.component';
 import MobileContentComponent from './components/mobile-content/mobile-content.component';
 import DialogTemplateComponent from './components/dialog-template/dialog-template.component';
-import FooterComponent from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import FooterComponent from './components/footer/footer.component';
     DesktopContentComponent,
     MobileContentComponent,
     DialogTemplateComponent,
-    FooterComponent,
   ],
   imports: [
     CommonModule,

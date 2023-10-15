@@ -43,5 +43,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export default class PregnancyRoutingModule {
-
 }

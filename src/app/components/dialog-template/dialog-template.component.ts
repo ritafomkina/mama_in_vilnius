@@ -1,6 +1,6 @@
 import { LocationStrategy } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import DialogService from 'src/app/services/dialog.service';
 
 @Component({
@@ -8,20 +8,27 @@ import DialogService from 'src/app/services/dialog.service';
   templateUrl: './dialog-template.component.html',
   styleUrls: ['./dialog-template.component.scss'],
 })
-export default class DialogTemplateComponent implements OnInit {
+export default class DialogTemplateComponent implements OnInit, AfterViewInit {
   constructor(
     private dialogService: DialogService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private locationStrategy: LocationStrategy,
   ) {
   }
 
   public dialog = false;
 
+  public dialogText = 'загрузка...';
+
   ngOnInit(): void {
     this.dialogService.currentDialogStatus.subscribe((status) => {
       this.dialog = status;
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.dialogText = 'закрыть';
   }
 
   public closeDialog($event: MouseEvent) {
