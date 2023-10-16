@@ -8,7 +8,7 @@
   @include font($colorBlue, 400, 18px, 24px);
   height: 70px;
   width: 100%;
-  padding: 0px 20px;
+  padding: 0px 30px;
 }
 
 .error-link {
@@ -21,6 +21,7 @@
 }
 
 .site-info-container {
+  @include flex(column, flex-start, center);
   flex: 0 1 auto;
   margin-left: auto;
   color: black;
@@ -34,5 +35,13 @@
 :host {
   height: 50px;
   font-size: 14px;
+}
+.error-link {
+  position: static;
+  transform: none;
+}
+.site-info-container {
+  font-size: 10px;
+  line-height: 15px;
 }
 }
