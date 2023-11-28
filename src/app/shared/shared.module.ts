@@ -6,7 +6,7 @@ import ChooseCountryDialogComponent from './components/choose-country-dialog/cho
 import ChooseInsuranseComponent from './components/choose-insurance/choose-insurance.component';
 import ErrorPageComponent from './components/error-page/error-page.component';
 
-const materialComponents = [
+const materialModules = [
   MatButtonModule, MatDialogModule,
 ];
 const components = [
@@ -18,11 +18,11 @@ const components = [
 @NgModule({
   imports: [
     CommonModule,
-    ...materialComponents,
+    ...materialModules,
   ],
   declarations: [
     ...components,
   ],
-  exports: [...materialComponents, ...components],
+  exports: [...materialModules, ...components],
 })
 export default class SharedModule { }
