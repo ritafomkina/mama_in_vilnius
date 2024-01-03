@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import HelloComponent from './components/hello/hello.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'hello',
+  },
+  {
+    path: 'hello',
+    component: HelloComponent,
+  },
   {
     path: 'pregnancy',
     loadChildren: () => import('./pregnancy/pregnancy.module').then((m) => m.default),

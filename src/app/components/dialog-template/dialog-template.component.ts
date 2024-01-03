@@ -1,6 +1,6 @@
-import { LocationStrategy } from '@angular/common';
+import { LocationStrategy, Location } from '@angular/common';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import DialogService from 'src/app/services/dialog.service';
 
 @Component({
@@ -9,11 +9,13 @@ import DialogService from 'src/app/services/dialog.service';
   styleUrls: ['./dialog-template.component.scss'],
 })
 export default class DialogTemplateComponent implements OnInit, AfterViewInit {
+  public helloPath = false;
+
   constructor(
     private dialogService: DialogService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private locationStrategy: LocationStrategy,
+    private location: Location,
   ) {
   }
 
@@ -25,6 +27,12 @@ export default class DialogTemplateComponent implements OnInit, AfterViewInit {
     this.dialogService.currentDialogStatus.subscribe((status) => {
       this.dialog = status;
     });
+  }
+
+  ngAfterContentInit() {
+    this.helloPath = this.location.isCurrentPathEqualTo('/hello');
+    console.log(this.helloPath);
+    console.log(this.location.path());
   }
 
   ngAfterViewInit(): void {

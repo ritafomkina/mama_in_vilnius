@@ -19,9 +19,26 @@
   align-self: end;
   padding-right: 10px;
 }
+
+.hello-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 0;
+  width: 100%;
+}
+
+// .actions-btns {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
 .close-btn {
   align-self: flex-end;
   width: 100px;
   height: 50px;
   margin-left: 24px;
+}
+
+.hello-btn {
+  width: 200px;
 }

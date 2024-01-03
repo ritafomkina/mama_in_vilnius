@@ -15,6 +15,8 @@ export default class DialogService {
 
   public currentDialog: MatDialogRef<any>;
 
+  public helloDialog = false;
+
   toggleScroll() {
     document.body.classList.toggle('noscroll');
   }
@@ -57,4 +59,14 @@ export default class DialogService {
     document.body.classList.add('noscroll');
     this.router.navigate([root.section, root.topic]);
   }
+
+  // public closeDialog($event: MouseEvent) {
+  //   if (this.dialog) {
+  //     const el = $event?.target as HTMLElement;
+  //     if ((el.closest('.dialog') && el.closest('.close-btn')) || !el.closest('.dialog')) {
+  //       this.dialogService.isClosed();
+  //       this.router.navigateByUrl(this.locationStrategy.getBaseHref());
+  //     }
+  //   }
+  // }
 }
