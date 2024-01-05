@@ -32,7 +32,7 @@ export default class AppComponent implements OnInit {
   public hello = false;
 
   ngOnInit(): void {
-    this.dialogService.isOpened();
+    // this.dialogService.isOpened();
     if (window.location.href.includes('pregnancy')
        || window.location.href.includes('birth')
        || window.location.href.includes('toddler')
@@ -51,13 +51,13 @@ export default class AppComponent implements OnInit {
   // ngAfterCOntetnInit() {
   //   console.log(this.locationStrategy.path());
   // }
-  // public closeDialog($event: MouseEvent) {
-  //   if (this.dialog) {
-  //     const el = $event?.target as HTMLElement;
-  //     if ((el.closest('.dialog') && el.closest('.close-btn')) || !el.closest('.dialog')) {
-  //       this.dialogService.isClosed();
-  //       this.router.navigateByUrl(this.locationStrategy.getBaseHref());
-  //     }
-  //   }
-  // }
+  public closeDialog($event: MouseEvent) {
+    if (this.dialog) {
+      const el = $event?.target as HTMLElement;
+      if ((el.closest('.dialog') && el.closest('.close-btn')) || !el.closest('.dialog')) {
+        this.dialogService.isClosed();
+        this.router.navigateByUrl(this.locationStrategy.getBaseHref());
+      }
+    }
+  }
 }

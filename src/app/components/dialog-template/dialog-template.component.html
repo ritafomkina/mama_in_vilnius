@@ -2,12 +2,12 @@
     <router-outlet></router-outlet>
    </mat-dialog-content>
   <mat-dialog-actions [ngClass]="helloPath ? 'hello-actions' : 'actions'">
-    <div *ngIf="helloPath; then actionsBtns else closeBtn"></div>
-      <ng-template #actionsBtns class="actions-btns">
-        <button class="close-btn hello-btn" mat-button>Связаться со мной</button>
-        <button class="close-btn hello-btn" mat-button (click)="closeDialog($event)">Пожелать удачи</button>
-      </ng-template>
-      <ng-template #closeBtn>
+    <!-- <div *ngIf="helloPath; then actionsBtns else closeBtn"></div> -->
+      <!-- <ng-template #actionsBtns class="actions-btns"> -->
+        <!-- <button class="close-btn hello-btn" mat-button>Связаться со мной</button> -->
+        <!-- <button class="close-btn hello-btn" mat-button (click)="closeDialog($event)">Пожелать удачи</button> -->
+      <!-- </ng-template> -->
+      <!-- <ng-template #closeBtn> -->
         <button class="close-btn" mat-button (click)="closeDialog($event)">{{dialogText}}</button>
-      </ng-template>
+      <!-- </ng-template> -->
   </mat-dialog-actions>
