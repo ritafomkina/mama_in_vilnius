@@ -37,7 +37,7 @@ export default class LinksDataService {
     },
     {
       topic: 'doula',
-      title: 'Доулы, консультанты по ГВ',
+      title: 'Доулы, консультанты, курсы для беременных',
       description: '',
       imgSRC: '',
     },
