@@ -11,12 +11,6 @@
         }
     }
 
-    // @media screen and (max-width: 600px) {
-    //     .topics {
-    //         width: 500px !important;
-    //     }
-    // }
-
     @media screen and (max-width: 599px) {
         .topics {
             width: 100% !important;
@@ -31,6 +25,7 @@
     .card__header {
         padding-top: 20px;
         padding-bottom: 20px;
+        z-index: 1000;
     }
 
     ::ng-deep .mat-drawer-inner-container {
@@ -110,7 +105,7 @@
         }
 
         .sidenav {
-            top: 180px !important;
+            top: 160px !important;
             background: var(--page-bg);
             border-top: 0.5px solid var(--text-base-color);
         }
