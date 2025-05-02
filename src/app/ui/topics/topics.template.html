@@ -1,0 +1,77 @@
+<mat-sidenav-container class="w-100">
+    <mat-sidenav
+        #drawer
+        position="end"
+        hasBackdrop="false"
+        fixedInViewport
+        class="py-0 px-3 sidenav"
+    >
+        <div class="position-relative card__header">
+            <h2 class="title">Темы</h2>
+            <mat-icon
+                aria-hidden="false"
+                aria-label="arrow"
+                class="position-absolute z-5 icon menu menu_opened"
+                (click)="closeMenu()"
+                >close</mat-icon
+            >
+        </div>
+        <ul class="p-0 list">
+            @for(topic of topics; track topic.id) {
+            <li class="pointer list__item">
+                <div
+                    class="d-flex justify-content-between align-items-center list__link"
+                    [class.isActive]="topic.id === activeTopic()?.id"
+                    (click)="selectTopic(topic.id)"
+                >
+                    {{topic.title}}
+
+                    <mat-icon
+                        aria-hidden="false"
+                        aria-label="arrow"
+                        class="icon"
+                        >keyboard_arrow_right</mat-icon
+                    >
+                </div>
+            </li>
+            }
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+        <mat-card appearance="outlined" class="mt-3 topics card">
+            <mat-card-content class="d-flex flex-column p-0 topics__content">
+                @if(activeTopic()) {
+                <div class="position-relative w-100 px-3 card__header">
+                    <h2 class="title">{{activeTopic()?.title}}</h2>
+                    @if(isXSmall()) {
+                    <div
+                        class="position-absolute z-5 d-flex flex-column align-items-end justify-content-center cursor-pointer menu menu_closed"
+                        (click)="openMenu()"
+                    >
+                        <span></span>
+                    </div>
+                    }
+                </div>
+                }
+
+                <ul class="px-3 overflow-auto list">
+                    @for(topic of activeTopics(); let last = $last; track
+                    topic.id) {
+                    <li
+                        class="pointer d-flex align-items-center justify-content-between list__item"
+                        (click)="selectTopic(topic.id)"
+                    >
+                        <div class="topic__title">{{topic.title}}</div>
+                        <mat-icon
+                            aria-hidden="false"
+                            aria-label="arrow"
+                            class="ms-1 flex-shrink-1 icon"
+                            >keyboard_arrow_right</mat-icon
+                        >
+                    </li>
+                    }
+                </ul>
+            </mat-card-content>
+        </mat-card>
+    </mat-sidenav-content>
+</mat-sidenav-container>

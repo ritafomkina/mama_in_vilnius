@@ -1,0 +1,25 @@
+:host {
+  .breadcrumbs {
+    padding: 0 40px;
+    .breadcrumb {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      height: 56px;
+      color: var(--text-secondary-color);
+      .icon {
+        height: 16px;
+        width: 16px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .breadcrumbs {
+      padding-left: 8px;
+      padding-right: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+  }
+}

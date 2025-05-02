@@ -1,0 +1,106 @@
+:host {
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 600px !important;
+    padding: 12px;
+
+    .article {
+        border: none !important;
+        border-radius: 24px !important;
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1) !important;
+        background: var(--block-bg) !important;
+        width: 100% !important;
+        &__content {
+            // padding: 16px 14px !important;
+            border-radius: inherit !important;
+        }
+    }
+
+    .article-title {
+        background: var(--primary);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--text-base-color);
+        padding: 6px 12px;
+        border-radius: 8px;
+        max-width: 70%;
+    }
+
+    ::ng-deep .title {
+        margin-bottom: 0.5rem;
+    }
+
+    ::ng-deep .content {
+        margin-bottom: 10px;
+    }
+
+    ::ng-deep ul,
+    ol {
+        margin-bottom: 0;
+    }
+
+    ::ng-deep {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    h4,
+    ::ng-deep .title {
+        font-size: 1.2rem;
+    }
+    ::ng-deep .content h5 {
+        font-size: 1.125rem !important;
+    }
+}
+
+.container {
+    max-width: 300px;
+    &__title {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 23px;
+    }
+}
+
+.btn {
+    border-radius: 16px !important;
+    height: 56px !important;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    border: 0.5px solid var(--text-base-color);
+    background: var(--primary);
+
+    &_yellow {
+        border: none;
+        background-color: var(--primary);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: var(--primary);
+        }
+    }
+}
+
+ul {
+    list-style-type: disc;
+}
+
+@media screen and (max-width: 599px) {
+    :host {
+        width: 100% !important;
+        .article {
+            background: var(--page-bg) !important;
+            box-shadow: none !important;
+            &__content {
+                padding: 0 !important;
+            }
+        }
+    }
+}

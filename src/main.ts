@@ -1,11 +1,6 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { inject } from '@vercel/analytics';
-import AppModule from './app/app.module';
-
-inject();
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  // eslint-disable-next-line no-console
+bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
