@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+@if(isLoading()) {
+<mat-spinner mode="indeterminate" color="primary"></mat-spinner>
+}
+
+<div class="content">
+    <router-outlet> </router-outlet>
+</div>
+
+<app-footer></app-footer>

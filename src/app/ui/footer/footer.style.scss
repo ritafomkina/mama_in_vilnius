@@ -1,0 +1,20 @@
+:host {
+    height: 80px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+    width: 100%;
+
+    .header {
+        border-top: 2px solid var(--border);
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .link {
+        text-decoration: none;
+        font-style: italic;
+    }
+}

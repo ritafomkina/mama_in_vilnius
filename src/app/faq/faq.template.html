@@ -1,0 +1,24 @@
+<app-breadcrumbs
+    [breadcrumbs]="breadcrumbs()"
+    [hideBackBtn]="isOpenMenuMode"
+    (open)="openTopic($event)"
+    class="w-100"
+></app-breadcrumbs>
+
+<ng-container
+    [ngTemplateOutlet]="article() ? articleTmp : topicsTmp"
+></ng-container>
+
+<ng-template #topicsTmp>
+    <app-topics
+        [activeTopics]="topics"
+        [activeTopic]="activeTopic"
+        (open)="openTopic($event)"
+        (isOpenMenuMode)="isOpenMenuMode = $event"
+        class="w-100"
+    ></app-topics>
+</ng-template>
+
+<ng-template #articleTmp>
+    <app-article [article]="article()!"></app-article>
+</ng-template>

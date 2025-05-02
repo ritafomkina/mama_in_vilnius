@@ -1,63 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import DialogService from 'src/app/services/dialog.service';
-import { LocationStrategy, Location } from '@angular/common';
-import { Router } from '@angular/router';
-import ModeService from './services/mode.service';
-import PathService from './services/path.service';
+import { Component, OnInit, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { APP_LOCATION_TOKEN } from './core/tokens/app-location-token';
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    standalone: true,
+    template: ` <router-outlet></router-outlet> `,
+    imports: [RouterOutlet],
 })
-export default class AppComponent implements OnInit {
-  title = 'mums-app';
+export class AppComponent implements OnInit {
+    private readonly _location = inject(Location);
+    private readonly _appLocation = inject(APP_LOCATION_TOKEN);
 
-  constructor(
-    private dialogService: DialogService,
-    private pathService: PathService,
-    private router: Router,
-    private locationStrategy: LocationStrategy,
-    private location: Location,
-    private mode: ModeService,
-  ) {
-  }
-
-  public isMobileMode = false;
-
-  public dialog = false;
-
-  public error = false;
-
-  public hello = false;
-
-  ngOnInit(): void {
-    // this.dialogService.isOpened();
-    if (window.location.href.includes('pregnancy')
-       || window.location.href.includes('birth')
-       || window.location.href.includes('toddler')
-       || window.location.href.includes('links')) {
-      this.dialogService.isOpened();
+    ngOnInit(): void {
+        const currentPath = this._location.path();
+        this._appLocation.set(currentPath);
     }
-    // this.pathService.setPath();
-    // this.router.navigateByUrl('hello');
-    this.dialogService.helloDialog = true;
-    this.dialogService.currentDialogStatus.subscribe((status) => {
-      this.dialog = status;
-    });
-    this.isMobileMode = this.mode.isMobileMode();
-  }
-
-  // ngAfterCOntetnInit() {
-  //   console.log(this.locationStrategy.path());
-  // }
-  public closeDialog($event: MouseEvent) {
-    if (this.dialog) {
-      const el = $event?.target as HTMLElement;
-      if ((el.closest('.dialog') && el.closest('.close-btn')) || !el.closest('.dialog')) {
-        this.dialogService.isClosed();
-        this.router.navigateByUrl(this.locationStrategy.getBaseHref());
-      }
-    }
-  }
 }

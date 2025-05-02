@@ -1,0 +1,67 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        font-family: Boli Cyrillic;
+        font-size: 100px;
+        line-height: 100%;
+        margin-bottom: 60px;
+    }
+
+    .text-container {
+        max-width: 650px;
+        margin-bottom: 40px;
+
+        .subtitle {
+            font-weight: 300;
+            line-height: 120%;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .description {
+            font-weight: 300;
+            line-height: 120%;
+        }
+    }
+
+    .btn {
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 24px;
+        border-radius: 16px;
+        border: 1.5px solid var(--text-base-color);
+        text-decoration: none;
+        color: var(--text-base-color);
+        height: 58px;
+        padding: 16px 30px !important;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    @media screen and (max-width: 599px) {
+        .title {
+            font-size: 60px;
+        }
+        .logo {
+            margin-top: 40px;
+        }
+        .btn {
+            border: none;
+            padding: 0;
+        }
+        .btns {
+            a:first-child {
+                margin-right: 8px;
+            }
+        }
+        .icon {
+            display: block;
+            margin-left: 20px;
+        }
+    }
+}
