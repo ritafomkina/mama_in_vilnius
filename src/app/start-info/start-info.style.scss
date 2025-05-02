@@ -46,19 +46,24 @@
 
     @media screen and (max-width: 599px) {
         .title {
-            font-size: 60px;
+            font-size: 50px;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
         .logo {
             margin-top: 40px;
         }
+
+        .text-container {
+            margin-bottom: 16px;
+          .subtitle {
+            margin-bottom: 20px;
+          }
+        }
         .btn {
             border: none;
             padding: 0;
-        }
-        .btns {
-            a:first-child {
-                margin-right: 8px;
-            }
+            font-size: 20px;
         }
         .icon {
             display: block;
