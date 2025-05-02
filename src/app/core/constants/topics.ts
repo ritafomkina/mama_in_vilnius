@@ -73,7 +73,7 @@ export const TOPICS: Topic[] = [
                         title: 'Какие документы нужны',
                     },
                     {
-                        id: 'price',
+                        id: 'kg-price',
                         title: 'Стоимость',
                     },
                     {
