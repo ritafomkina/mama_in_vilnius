@@ -45,5 +45,8 @@
         "lint-staged": "^15.2.10",
         "ts-node": "^10.9.2",
         "typescript": "~5.4.2"
-    }
+    },
+    "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  }
 }
