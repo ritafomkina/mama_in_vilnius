@@ -7,7 +7,7 @@ let counter = 0;
 
 export const progressInterceptor = (
     request: HttpRequest<unknown>,
-    next: HttpHandlerFn
+    next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> => {
     const loading = inject(LOADING);
 
@@ -24,6 +24,6 @@ export const progressInterceptor = (
                     loading.stop();
                 }
             }
-        })
+        }),
     );
 };

@@ -38,7 +38,7 @@ export class FaqComponent implements OnInit {
     activeTopic: Topic | null = null;
     breadcrumbs = signal<Breadcrumb[]>([]);
 
-    isOpenMenuMode: boolean = false;
+    isOpenMenuMode = false;
 
     constructor() {
         effect(() => {
@@ -54,7 +54,7 @@ export class FaqComponent implements OnInit {
 
         const path = this._appLocation.get().split('/').slice(2);
 
-        for (let topic of path) {
+        for (const topic of path) {
             this.openTopic(topic);
         }
     }
@@ -97,7 +97,7 @@ export class FaqComponent implements OnInit {
 
     private _findTopicById(
         id: string,
-        topics: Topic[] = this._allTopics
+        topics: Topic[] = this._allTopics,
     ): Topic | null {
         for (const topic of topics) {
             if (topic.id === id) {

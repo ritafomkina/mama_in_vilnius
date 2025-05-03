@@ -3,7 +3,6 @@ import {
     Component,
     effect,
     inject,
-    input,
     model,
     output,
 } from '@angular/core';
@@ -27,7 +26,7 @@ export class BreadcrumbsComponent {
     readonly isSmallScreen = toSignal(
         inject(BreakpointObserver)
             .observe(['(max-width: 1260px)'])
-            .pipe(map(({ matches }: BreakpointState) => matches))
+            .pipe(map(({ matches }: BreakpointState) => matches)),
     );
 
     readonly breadcrumbs = model<Breadcrumb[]>([]);
@@ -39,7 +38,7 @@ export class BreadcrumbsComponent {
             () => {
                 this.hideBackBtn.set(!this.breadcrumbs().length);
             },
-            { allowSignalWrites: true }
+            { allowSignalWrites: true },
         );
     }
 

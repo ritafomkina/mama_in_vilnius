@@ -14,9 +14,9 @@ export class ArticleService {
 
     readonly article = toSignal<Article | null>(
         this._path.pipe(
-            switchMap((path) => (path ? this._getArticle(path) : of(null)))
+            switchMap((path) => (path ? this._getArticle(path) : of(null))),
         ),
-        { initialValue: null }
+        { initialValue: null },
     );
 
     set path(path: string[] | null) {
@@ -25,7 +25,7 @@ export class ArticleService {
 
     private _getArticle(path: string[]): Observable<Article> {
         return this._http.get<Article>(
-            `/assets/articles/${path.join('/')}.json`
+            `/assets/articles/${path.join('/')}.json`,
         );
     }
 }
