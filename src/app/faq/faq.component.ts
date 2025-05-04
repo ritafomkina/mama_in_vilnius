@@ -29,9 +29,9 @@ import { Router } from '@angular/router';
 })
 export class FaqComponent implements OnInit {
     private readonly _allTopics: Topic[] = TOPICS;
-    private readonly _articleService = inject(ArticleService);
+    private readonly _articleService: ArticleService = inject(ArticleService);
     private readonly _appLocation = inject(APP_LOCATION_TOKEN);
-    private readonly _router = inject(Router);
+    private readonly _router: Router = inject(Router);
 
     topics: Topic[] = [];
     article = this._articleService.article;
