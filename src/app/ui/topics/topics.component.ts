@@ -3,14 +3,13 @@ import {
     Component,
     inject,
     input,
-    model,
     output,
     viewChild,
 } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
-import { Article, Breadcrumb, Topic } from '@models';
+import { Topic } from '@models';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import {
@@ -32,7 +31,7 @@ export class TopicsComponent {
     readonly isXSmall = toSignal(
         inject(BreakpointObserver)
             .observe(Breakpoints.XSmall)
-            .pipe(map(({ matches }: BreakpointState) => matches))
+            .pipe(map(({ matches }: BreakpointState) => matches)),
     );
     readonly topics = TOPICS;
 

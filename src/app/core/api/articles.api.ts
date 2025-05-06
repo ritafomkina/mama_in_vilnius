@@ -10,7 +10,7 @@ export class ArticlesApi {
 
     getArticle(topic: string, article: string): Observable<Article> {
         return this._http.get<Article>(
-            `/assets/articles/${topic}/${article}.json`
+            `/assets/articles/${topic}/${article}.json`,
         );
     }
 }

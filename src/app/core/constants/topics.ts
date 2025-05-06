@@ -50,6 +50,10 @@ export const TOPICS: Topic[] = [
                 topics: COUNTRY_OPTIONS,
             },
             { id: 'dads-benefits', title: 'Бонусы для папы' },
+            {
+                id: 'european-insurance',
+                title: 'Как оформить Европейскую карту медицинского страхования',
+            },
         ],
     },
     {

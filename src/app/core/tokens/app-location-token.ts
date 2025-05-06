@@ -22,5 +22,5 @@ export const APP_LOCATION_TOKEN = new InjectionToken<LocationInterface>(
                 get: () => initialLocation,
             };
         },
-    }
+    },
 );

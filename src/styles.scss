@@ -14,8 +14,9 @@ body {
 
 :root {
     // Fonts
-    --ff: "Roboto Flex", -apple-system, "BlinkMacSystemFont", system-ui,
-        "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
+    --ff:
+        "Roboto Flex", -apple-system, "BlinkMacSystemFont", system-ui, "Roboto",
+        "Segoe UI", "Helvetica Neue", sans-serif;
 
     // Backgrounds
     --primary: #dddaf5;
@@ -70,14 +71,30 @@ body {
 }
 
 .mat-mdc-snack-bar-container {
+    min-width: 200px !important;
+    max-width: 470px !important;
     .mat-mdc-snackbar-surface {
         background-color: var(--primary) !important;
         color: var(--text-base-color) !important;
-        height: 60px;
+        min-width: unset !important;
+        width: 100% !important;
     }
-    & .mdc-snackbar__label {
-        font: 16px/1.5 "Roboto", sans-serif !important;
+
+    @media screen and (max-width: 599px) {
+        .mdc-snackbar__label {
+            font-size: 14px !important;
+        }
     }
+
+    @media screen and (max-width: 420px) {
+        .mdc-snackbar__label {
+            font-size: 10px !important;
+        }
+    }
+}
+
+.mdc-tooltip__surface {
+    background-color: #856bc6 !important;
 }
 
 .pointer {

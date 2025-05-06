@@ -29,16 +29,16 @@ import { Router } from '@angular/router';
 })
 export class FaqComponent implements OnInit {
     private readonly _allTopics: Topic[] = TOPICS;
-    private readonly _articleService = inject(ArticleService);
+    private readonly _articleService: ArticleService = inject(ArticleService);
     private readonly _appLocation = inject(APP_LOCATION_TOKEN);
-    private readonly _router = inject(Router);
+    private readonly _router: Router = inject(Router);
 
     topics: Topic[] = [];
     article = this._articleService.article;
     activeTopic: Topic | null = null;
     breadcrumbs = signal<Breadcrumb[]>([]);
 
-    isOpenMenuMode: boolean = false;
+    isOpenMenuMode = false;
 
     constructor() {
         effect(() => {
@@ -54,7 +54,7 @@ export class FaqComponent implements OnInit {
 
         const path = this._appLocation.get().split('/').slice(2);
 
-        for (let topic of path) {
+        for (const topic of path) {
             this.openTopic(topic);
         }
     }
@@ -97,7 +97,7 @@ export class FaqComponent implements OnInit {
 
     private _findTopicById(
         id: string,
-        topics: Topic[] = this._allTopics
+        topics: Topic[] = this._allTopics,
     ): Topic | null {
         for (const topic of topics) {
             if (topic.id === id) {

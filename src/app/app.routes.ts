@@ -10,7 +10,7 @@ export const routes: Routes = [
                 path: '',
                 loadComponent: async () =>
                     import('./start-info/start-info.component').then(
-                        (m) => m.StartInfoComponent
+                        (m) => m.StartInfoComponent,
                     ),
             },
             {
