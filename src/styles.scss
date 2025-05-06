@@ -79,10 +79,17 @@ body {
         min-width: unset !important;
         width: 100% !important;
     }
-    & .mdc-snackbar__label {
-        font:
-            16px/1.5 "Roboto",
-            sans-serif !important;
+
+    @media screen and (max-width: 599px) {
+        .mdc-snackbar__label {
+            font-size: 14px !important;
+        }
+    }
+
+    @media screen and (max-width: 420px) {
+        .mdc-snackbar__label {
+            font-size: 10px !important;
+        }
     }
 }
 

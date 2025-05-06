@@ -38,7 +38,7 @@ export class ArticleComponent {
     readonly article = input<Article>();
 
     constructor() {
-        this._config.duration = 2000;
+        this._config.duration = 200000;
         this._config.horizontalPosition = 'end';
         this._config.verticalPosition = 'top';
     }
