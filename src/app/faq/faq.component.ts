@@ -3,6 +3,7 @@ import {
     Component,
     effect,
     inject,
+    OnDestroy,
     OnInit,
     signal,
 } from '@angular/core';
@@ -25,9 +26,10 @@ import { Router } from '@angular/router';
         ArticleComponent,
         TopicsComponent,
     ],
+    providers: [ArticleService],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FaqComponent implements OnInit {
+export class FaqComponent implements OnInit, OnDestroy {
     private readonly _allTopics: Topic[] = TOPICS;
     private readonly _articleService: ArticleService = inject(ArticleService);
     private readonly _appLocation = inject(APP_LOCATION_TOKEN);
@@ -51,12 +53,11 @@ export class FaqComponent implements OnInit {
 
     ngOnInit(): void {
         this.topics = this._allTopics;
+        this._openTopicFromUrl();
+    }
 
-        const path = this._appLocation.get().split('/').slice(2);
-
-        for (const topic of path) {
-            this.openTopic(topic);
-        }
+    ngOnDestroy(): void {
+        this._appLocation.set('/');
     }
 
     openTopic(topicId: string | null): void {
@@ -124,6 +125,15 @@ export class FaqComponent implements OnInit {
             this.breadcrumbs.set(newPath);
         } else {
             this.breadcrumbs.set([...this.breadcrumbs(), topic]);
+        }
+    }
+
+    private _openTopicFromUrl(): void {
+        const path = this._appLocation.get().split('/').slice(2);
+        if (path.length) {
+            for (const topic of path) {
+                this.openTopic(topic);
+            }
         }
     }
 }
