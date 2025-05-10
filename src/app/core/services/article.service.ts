@@ -5,9 +5,7 @@ import { Observable, Subject, of, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
 export class ArticleService {
     private readonly _http = inject(HttpClient);
     private readonly _path = new Subject<string[] | null>();
