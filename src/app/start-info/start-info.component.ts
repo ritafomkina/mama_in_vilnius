@@ -11,4 +11,4 @@ import { MatButtonModule } from '@angular/material/button';
     imports: [RouterLink, MatButtonModule, MatIconModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StartInfoComponent {}
+export default class StartInfoComponent {}
