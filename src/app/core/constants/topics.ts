@@ -92,7 +92,7 @@ export const TOPICS: Topic[] = [
                 topics: [
                     {
                         id: 'education',
-                        title: 'Развлечения/развивашки',
+                        title: 'Развлечения и развивашки',
                     },
                     {
                         id: 'playgrounds',
