@@ -45,6 +45,10 @@ export const TOPICS: Topic[] = [
             { id: 'babyshealth', title: 'Здоровье малыша' },
             { id: 'mamashealth', title: 'Здоровье мамы' },
             {
+                id: 'newborn-consultants',
+                title: 'Консультанты по ГВ, помощь с новорожденными',
+            },
+            {
                 id: 'documents',
                 title: 'Какие документы оформить малышу',
                 topics: COUNTRY_OPTIONS,
@@ -113,6 +117,19 @@ export const TOPICS: Topic[] = [
     {
         id: 'students',
         title: 'Школьник',
-        topics: [{ id: 'clubs', title: 'Компенсация кружков' }],
+        topics: [
+            { id: 'clubs', title: 'Компенсация кружков' },
+            {
+                id: 'school',
+                title: 'Школы',
+                topics: [
+                    { id: 'school-choice', title: 'Как выбрать школу' },
+                    {
+                        id: 'school-application',
+                        title: 'Как подать заявление в школу',
+                    },
+                ],
+            },
+        ],
     },
 ];
