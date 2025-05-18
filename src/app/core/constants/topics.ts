@@ -51,7 +51,22 @@ export const TOPICS: Topic[] = [
             {
                 id: 'documents',
                 title: 'Какие документы оформить малышу',
-                topics: COUNTRY_OPTIONS,
+                topics: [
+                    {
+                        id: 'birth-certificate',
+                        title: 'Свидетельство о рождении',
+                    },
+                    {
+                        id: 'citizenship-documents',
+                        title: 'Документы страны гражданства',
+                        topics: COUNTRY_OPTIONS,
+                    },
+                    {
+                        id: 'residence-permit',
+                        title: 'ВНЖ',
+                        topics: COUNTRY_OPTIONS,
+                    },
+                ],
             },
             { id: 'dads-benefits', title: 'Бонусы для папы' },
             {
