@@ -45,10 +45,6 @@ export const TOPICS: Topic[] = [
             { id: 'babyshealth', title: 'Здоровье малыша' },
             { id: 'mamashealth', title: 'Здоровье мамы' },
             {
-                id: 'newborn-consultants',
-                title: 'Консультанты по ГВ, помощь с новорожденными',
-            },
-            {
                 id: 'documents',
                 title: 'Какие документы оформить малышу',
                 topics: [
@@ -72,6 +68,10 @@ export const TOPICS: Topic[] = [
             {
                 id: 'european-insurance',
                 title: 'Как оформить Европейскую карту медицинского страхования',
+            },
+            {
+                id: 'newborn-consultants',
+                title: 'Консультанты по ГВ, помощь с новорожденными',
             },
         ],
     },
@@ -101,7 +101,7 @@ export const TOPICS: Topic[] = [
                     },
                     {
                         id: 'change',
-                        title: 'Как поменять детский сад?',
+                        title: 'Как поменять детский сад',
                     },
                 ],
             },
