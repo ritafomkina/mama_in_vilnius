@@ -3,6 +3,10 @@
     align-items: center;
     justify-content: center;
 
+    img {
+        height: 200px;
+    }
+
     .text-container {
         max-width: 650px;
         margin-bottom: 40px;
@@ -37,6 +41,9 @@
     }
 
     @media screen and (max-width: 599px) {
+        img {
+            height: 180px;
+        }
         .title {
             font-size: 50px;
             margin-bottom: 20px;

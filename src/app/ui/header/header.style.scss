@@ -1,15 +1,8 @@
-.header {
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     border-bottom: 2px solid var(--border);
-    img {
-        width: 250px;
-        height: 103px;
-    }
-    .logo-text {
-        font-family: Boli Cyrillic;
-        font-size: 18px;
-        letter-spacing: 0.8px;
-        line-height: 120%;
-        color: #faf3fc;
-        top: 25%;
-    }
+    padding: 8px 0 0 0;
 }
