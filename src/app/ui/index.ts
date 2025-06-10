@@ -4,3 +4,4 @@ export { ArticleComponent } from '../article/article.component';
 export { HeaderComponent } from './header/header.component';
 export { FooterComponent } from './footer/footer.component';
 export { StartDialogComponent } from './start-dialog/start-dialog.component';
+export { PageComponent } from './page/page.component';

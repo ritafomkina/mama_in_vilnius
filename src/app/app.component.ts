@@ -20,12 +20,13 @@ import { HeaderComponent } from './ui/header/header.component';
     ],
 })
 export class AppComponent implements OnInit {
-    private readonly _location = inject(Location);
-    private readonly _appLocation = inject(APP_LOCATION_TOKEN);
+    // this approach cause the router bug
+    // private readonly _location = inject(Location);
+    // private readonly _appLocation = inject(APP_LOCATION_TOKEN);
     readonly isLoading = inject(LOADING).state;
 
     ngOnInit(): void {
-        const currentPath = this._location.path();
-        this._appLocation.set(currentPath);
+        // const currentPath = this._location.path();
+        // this._appLocation.set(currentPath);
     }
 }
