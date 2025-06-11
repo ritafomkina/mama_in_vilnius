@@ -1,14 +1,15 @@
-<ul>
-    @for (topic of topic()?.topics; track topic.id) {
-        <li>
-            <button mat-button [routerLink]="['./', topic.id]">
-                <span>{{ topic.title }}</span>
-                <mat-icon> keyboard_arrow_right </mat-icon>
-            </button>
-        </li>
-    }
-</ul>
+@for (topic of topic()?.topics; track topic.id) {
+    <a
+        mat-button
+        [routerLink]="['./', topic.id]"
+        routerLinkActive="active-link"
+    >
+        <span>{{ topic.title }}</span>
+    </a>
+}
 
 <router-outlet> </router-outlet>
 
-<!-- <app-article [article]="article()!"></app-article> -->
+@if (article()) {
+    <app-article [article]="article()"></app-article>
+}

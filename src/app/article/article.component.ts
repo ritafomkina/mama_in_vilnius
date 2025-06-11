@@ -35,7 +35,7 @@ export class ArticleComponent {
     private readonly _snackbar: MatSnackBar = inject(MatSnackBar);
     private readonly _config: MatSnackBarConfig = new MatSnackBarConfig();
 
-    readonly article = input<Article>();
+    readonly article = input<Article | null>();
 
     constructor() {
         this._config.duration = 2000;
