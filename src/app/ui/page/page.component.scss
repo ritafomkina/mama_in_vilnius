@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    &:has(.active-link) {
+        &>a:not(.active-link) {
+            display: none;
+        }
+    }
+}
+
+.active-link {
+    font-weight: bold;
+}
