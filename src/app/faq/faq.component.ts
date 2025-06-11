@@ -26,12 +26,11 @@ import { Router } from '@angular/router';
         ArticleComponent,
         TopicsComponent,
     ],
-    providers: [ArticleService],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class FaqComponent implements OnInit, OnDestroy {
     private readonly _allTopics: Topic[] = TOPICS;
-    private readonly _articleService: ArticleService = inject(ArticleService);
+    private readonly _articleService = inject(ArticleService);
     private readonly _appLocation = inject(APP_LOCATION_TOKEN);
     private readonly _router: Router = inject(Router);
 
