@@ -125,6 +125,10 @@ export const TOPICS: Topic[] = [
             },
             { id: 'kids-benefits', title: 'Пособия' },
             { id: 'health', title: 'Здоровье' },
+            {
+                id: 'dentists',
+                title: 'Чайлд-френдли и круглосуточные стоматологии',
+            },
             { id: 'books', title: 'Книги' },
             { id: 'pools', title: 'Бассейны' },
         ],
@@ -146,5 +150,13 @@ export const TOPICS: Topic[] = [
                 ],
             },
         ],
+    },
+    {
+        id: 'help-ukrainian-moms',
+        title: 'Помощь мамам из Украины в Литве',
+    },
+    {
+        id: 'say-thank-you',
+        title: 'Как сказать спасибо автору гайда',
     },
 ];
