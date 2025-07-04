@@ -10,6 +10,11 @@ export const routes: Routes = [
         loadComponent: async () => import('./faq/faq.component'),
     },
     {
+        path: 'about-author',
+        loadComponent: async () =>
+            import('./about-author/about-author.component'),
+    },
+    {
         path: '**',
         redirectTo: 'faq',
     },

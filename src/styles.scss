@@ -99,6 +99,13 @@ body {
     opacity: 0.9 !important;
 }
 
+.mat-mdc-dialog-container {
+    .mat-mdc-dialog-actions {
+        --mat-dialog-actions-alignment: flex-end;
+    }
+    --mdc-dialog-container-shape: 8px;
+}
+
 .pointer {
     cursor: pointer !important;
 }
@@ -158,4 +165,49 @@ details summary::before {
 
 details[open] summary::before {
     transform: rotate(90deg);
+}
+
+.card {
+    border: none !important;
+    border-radius: 24px !important;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1) !important;
+    background: var(--block-bg) !important;
+    width: 600px !important;
+    &__content {
+        padding: 16px 14px !important;
+        border-radius: inherit !important;
+    }
+    &__title {
+        background: var(--primary);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--text-base-color);
+        padding: 6px 12px;
+        border-radius: 8px;
+        max-width: 70%;
+    }
+
+    &__btn {
+        border-radius: 16px !important;
+        height: 56px !important;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 25px;
+        border: 0.5px solid var(--text-base-color);
+        background: var(--primary);
+        padding: 10px;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .card {
+        width: 100% !important;
+        background: var(--page-bg) !important;
+        box-shadow: none !important;
+        &__content {
+            padding: 0 !important;
+        }
+    }
 }
