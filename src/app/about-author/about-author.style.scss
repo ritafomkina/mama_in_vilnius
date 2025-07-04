@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        font-size: 18px;
+        line-height: 150%;
+    }
+    strong {
+        color: var(--text-base-color);
+    }
+    .card {
+        width: 1000px !important;
+    }
+}

@@ -6,28 +6,6 @@
     max-width: 1000px;
     padding: 12px;
 
-    .article {
-        border: none !important;
-        border-radius: 24px !important;
-        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1) !important;
-        background: var(--block-bg) !important;
-        width: 100% !important;
-        &__content {
-            border-radius: inherit !important;
-        }
-    }
-
-    .article-title {
-        background: var(--primary);
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        color: var(--text-base-color);
-        padding: 6px 12px;
-        border-radius: 8px;
-        max-width: 70%;
-    }
-
     ::ng-deep .title {
         margin-bottom: 0.5rem;
     }
@@ -65,40 +43,6 @@
     }
 }
 
-.btn {
-    border-radius: 16px !important;
-    height: 56px !important;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 25px;
-    border: 0.5px solid var(--text-base-color);
-    background: var(--primary);
-
-    &_yellow {
-        border: none;
-        background-color: var(--primary);
-
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: var(--primary);
-        }
-    }
-}
-
 ul {
     list-style-type: disc;
-}
-
-@media screen and (max-width: 599px) {
-    :host {
-        width: 100% !important;
-        .article {
-            background: var(--page-bg) !important;
-            box-shadow: none !important;
-            &__content {
-                padding: 0 !important;
-            }
-        }
-    }
 }
