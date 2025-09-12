@@ -1,4 +1,4 @@
-:host {
+.navigation-container {
     display: flex;
     flex-direction: column;
     &:has(.active-link) {

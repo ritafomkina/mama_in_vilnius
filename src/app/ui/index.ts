@@ -5,3 +5,4 @@ export { HeaderComponent } from './header/header.component';
 export { FooterComponent } from './footer/footer.component';
 export { StartDialogComponent } from './start-dialog/start-dialog.component';
 export { PageComponent } from './page/page.component';
+export { NavigationPartComponent } from './navigation-part/navigation-part.component'
