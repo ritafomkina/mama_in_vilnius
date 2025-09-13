@@ -1,7 +1,8 @@
+@let data = routerData();
+
 <app-breadcrumbs
-    [breadcrumbs]="breadcrumbs()"
-    [hideBackBtn]="isOpenMenuMode"
-    (open)="openTopic($event)"
+    [breadcrumbs]="data?.breadcrumbs"
+    [currentTopicTitle]="data?.title"
     class="w-100"
 ></app-breadcrumbs>
 
@@ -11,14 +12,13 @@
 
 <ng-template #topicsTmp>
     <app-topics
-        [activeTopics]="topics"
-        [activeTopic]="activeTopic"
-        (open)="openTopic($event)"
-        (isOpenMenuMode)="isOpenMenuMode = $event"
+        [navigationItems]="data?.navigationItems"
+        [currentTopicTitle]="data?.title"
+        [isRootCurrentTopic]="data?.rootTopic"
         class="w-100"
     ></app-topics>
 </ng-template>
 
 <ng-template #articleTmp>
-    <app-article [article]="article()!"></app-article>
+    <app-article [article]="article()"></app-article>
 </ng-template>

@@ -2,32 +2,47 @@ import {
     ChangeDetectionStrategy,
     Component,
     inject,
-    input,
-    output,
+    Input,
     viewChild,
 } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
-import { Topic } from '@models';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs';
+
 import {
     BreakpointObserver,
     Breakpoints,
     BreakpointState,
 } from '@angular/cdk/layout';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+
+import { map } from 'rxjs';
+
+import { NavigationItem } from '@models';
 import { TOPICS } from '@core/constants';
 
 @Component({
     selector: 'app-topics',
     standalone: true,
-    imports: [MatIconModule, MatCardModule, MatSidenavModule],
+    imports: [
+        MatIconModule,
+        MatCardModule,
+        MatSidenavModule,
+        RouterLink,
+        RouterLinkActive,
+    ],
     templateUrl: 'topics.template.html',
     styleUrl: 'topics.style.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopicsComponent {
+    @Input() navigationItems?: NavigationItem[];
+    @Input() currentTopicTitle?: string;
+    @Input() isRootCurrentTopic?: boolean;
+
     readonly isXSmall = toSignal(
         inject(BreakpointObserver)
             .observe(Breakpoints.XSmall)
@@ -37,24 +52,11 @@ export class TopicsComponent {
 
     readonly drawer = viewChild<MatDrawer>('drawer');
 
-    readonly activeTopics = input<Topic[]>();
-    readonly activeTopic = input<Topic | null>();
-
-    readonly open = output<string>();
-    readonly isOpenMenuMode = output<boolean>();
-
-    selectTopic(topicId: string): void {
-        this.open.emit(topicId);
-        this.closeMenu();
-    }
-
     openMenu(): void {
-        this.isOpenMenuMode.emit(true);
         this.drawer()?.open();
     }
 
     closeMenu(): void {
-        this.isOpenMenuMode.emit(false);
         this.drawer()?.close();
     }
 }
