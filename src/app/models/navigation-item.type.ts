@@ -1,4 +1,4 @@
-export type Breadcrumb = {
+export type NavigationItem = {
     path: string;
     title: string;
 };

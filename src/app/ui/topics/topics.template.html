@@ -21,8 +21,8 @@
             <li class="pointer list__item">
                 <div
                     class="d-flex justify-content-between align-items-center list__link"
-                    [class.isActive]="topic.id === activeTopic()?.id"
-                    (click)="selectTopic(topic.id)"
+                    [routerLink]="['/faq/', topic.id]"
+                    routerLinkActive="isActive"
                 >
                     {{topic.title}}
 
@@ -40,9 +40,9 @@
     <mat-sidenav-content class="sidenav-content">
         <mat-card appearance="outlined" class="my-3 card">
             <mat-card-content class="d-flex flex-column p-0 card__content">
-                @if(activeTopic()) {
+                @if(!isRootCurrentTopic) {
                 <div class="position-relative w-100 px-3 d-flex card__header">
-                    <h2 class="mb-0 title">{{activeTopic()?.title}}</h2>
+                    <h2 class="mb-0 title">{{currentTopicTitle}}</h2>
                     @if(isXSmall()) {
                     <div
                         class="position-absolute z-5 d-flex flex-column align-items-end justify-content-center cursor-pointer menu menu_closed"
@@ -55,13 +55,12 @@
                 }
 
                 <ul class="px-3 overflow-auto list">
-                    @for(topic of activeTopics(); let last = $last; track
-                    topic.id) {
+                    @for(item of navigationItems; track item.path) {
                     <li
                         class="pointer d-flex align-items-center justify-content-between list__item"
-                        (click)="selectTopic(topic.id)"
+                        [routerLink]="item.path"
                     >
-                        <div class="topic__title">{{topic.title}}</div>
+                        <div class="topic__title">{{item.title}}</div>
                         <mat-icon
                             aria-hidden="false"
                             aria-label="arrow"

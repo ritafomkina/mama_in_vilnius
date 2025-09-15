@@ -1,46 +1,25 @@
 <div class="d-flex breadcrumbs">
-    @if(isSmallScreen()) {
+    @if(isSmallScreen()) { @if(breadcrumbs?.length) {
     <div
-        class="d-flex align-items-center m-0 breadcrumb"
-        (click)="openPath(breadcrumbs()[breadcrumbs().length-2] ? breadcrumbs()[breadcrumbs().length-2].id : 'faq')"
+        class="d-flex align-items-center m-0 pointer breadcrumb"
+        [routerLink]="breadcrumbs![breadcrumbs!.length - 1].path"
     >
-        @if(!hideBackBtn()) {
         <mat-icon class="mx-2 icon">arrow_back</mat-icon>
         <p class="click m-0">Назад</p>
-        }
     </div>
-    } @else {
-
+    } } @else { @for (item of breadcrumbs; let last = $last;track item.path) {
     <div
         class="d-flex align-items-center m-0 pointer breadcrumb"
-        (click)="openPath('main')"
+        [routerLink]="item.path"
     >
-        <p class="click m-0">Главная</p>
+        <p class="click m-0">{{item.title}}</p>
 
         <mat-icon class="mx-2 icon">arrow_forward</mat-icon>
     </div>
+    }
 
-    <div
-        class="d-flex align-items-center m-0 pointer breadcrumb"
-        (click)="openPath('faq')"
-    >
-        <p class="click m-0">Гайд</p>
-        @if(breadcrumbs().length) {
-        <mat-icon class="mx-2 icon">arrow_forward</mat-icon>
-        }
+    <div class="d-flex align-items-center m-0 breadcrumb">
+        <p class="click m-0">{{currentTopicTitle}}</p>
     </div>
-
-    @for(topic of breadcrumbs(); let last = $last; track topic ) {
-    <div
-        class="d-flex align-items-center m-0 breadcrumb"
-        [class.pointer]="!last"
-        (click)="!last ? openPath(topic.id) : null"
-    >
-        <p class="click m-0">{{ topic.title }}</p>
-        @if(!last) {
-        <mat-icon class="mx-2 icon">arrow_forward</mat-icon>
-        }
-    </div>
-
-    } }
+    }
 </div>

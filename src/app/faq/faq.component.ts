@@ -1,19 +1,25 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    effect,
-    inject,
     OnDestroy,
-    OnInit,
     signal,
 } from '@angular/core';
-import { ArticleComponent, BreadcrumbsComponent, TopicsComponent } from '@ui';
-import { Breadcrumb, Topic } from '@models';
 import { NgTemplateOutlet } from '@angular/common';
-import { TOPICS } from '../core/constants/topics';
-import { ArticleService } from '@core/services';
-import { APP_LOCATION_TOKEN } from '@core/tokens';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+
+import {
+    filter,
+    map,
+    Observable,
+    of,
+    Subject,
+    switchMap,
+    takeUntil,
+} from 'rxjs';
+
+import { ArticleComponent, BreadcrumbsComponent, TopicsComponent } from '@ui';
+import { Article, FaqRouterData } from '@models';
+import { ArticlesApi } from '@core/api';
 
 @Component({
     selector: 'app-faq',
@@ -26,114 +32,41 @@ import { Router } from '@angular/router';
         ArticleComponent,
         TopicsComponent,
     ],
-    providers: [ArticleService],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class FaqComponent implements OnInit, OnDestroy {
-    private readonly _allTopics: Topic[] = TOPICS;
-    private readonly _articleService: ArticleService = inject(ArticleService);
-    private readonly _appLocation = inject(APP_LOCATION_TOKEN);
-    private readonly _router: Router = inject(Router);
+export default class FaqComponent implements OnDestroy {
+    public routerData = signal<FaqRouterData | undefined>(undefined);
+    public article = signal<Article | undefined>(undefined);
 
-    topics: Topic[] = [];
-    article = this._articleService.article;
-    activeTopic: Topic | null = null;
-    breadcrumbs = signal<Breadcrumb[]>([]);
+    private unsubscribe$ = new Subject<void>();
 
-    isOpenMenuMode = false;
-
-    constructor() {
-        effect(() => {
-            if (this.breadcrumbs().length) {
-                const path = this.breadcrumbs().map((path) => path.id);
-                this._appLocation.set(`/faq/${path.join('/')}`);
-            }
-        });
+    constructor(
+        router: Router,
+        activatedRoute: ActivatedRoute,
+        articlesApi: ArticlesApi,
+    ) {
+        router.events
+            .pipe(
+                filter((event) => event instanceof NavigationEnd),
+                switchMap(() => {
+                    return activatedRoute.data as Observable<FaqRouterData>;
+                }),
+                switchMap((data) => {
+                    this.routerData.set(data);
+                    return data.articlePath
+                        ? articlesApi.getArticle(data.articlePath)
+                        : of(undefined);
+                }),
+                map((article) => {
+                    this.article.set(article);
+                }),
+                takeUntil(this.unsubscribe$),
+            )
+            .subscribe();
     }
 
-    ngOnInit(): void {
-        this.topics = this._allTopics;
-        this._openTopicFromUrl();
-    }
-
-    ngOnDestroy(): void {
-        this._appLocation.set('/');
-    }
-
-    openTopic(topicId: string | null): void {
-        if (!topicId) {
-            return this._resetState();
-        }
-
-        const topic = this._findTopicById(topicId);
-
-        if (!topic) {
-            return this._resetState();
-        }
-
-        this.activeTopic = topic;
-
-        if (this._allTopics.some((topic) => topic.id === topicId)) {
-            this.breadcrumbs.set([this.activeTopic]);
-        } else {
-            this._updateBreadcrumbs();
-        }
-
-        const isList = 'topics' in topic;
-
-        this.topics = isList ? topic.topics! : [];
-        this._articleService.path = isList
-            ? null
-            : this.breadcrumbs().map((path) => path.id);
-    }
-
-    private _resetState(): void {
-        this.topics = this._allTopics;
-        this.activeTopic = null;
-        this._articleService.path = null;
-        this.breadcrumbs.set([]);
-        this._appLocation.set('/faq');
-        this._router.navigateByUrl('/faq');
-    }
-
-    private _findTopicById(
-        id: string,
-        topics: Topic[] = this._allTopics,
-    ): Topic | null {
-        for (const topic of topics) {
-            if (topic.id === id) {
-                return topic;
-            }
-            if (topic.topics) {
-                const found = this._findTopicById(id, topic.topics);
-                if (found) {
-                    return found;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    private _updateBreadcrumbs(): void {
-        const topic = this.activeTopic!;
-
-        const i = this.breadcrumbs().findIndex((path) => path.id === topic.id);
-
-        if (i !== -1) {
-            const newPath = this.breadcrumbs().slice(0, i + 1);
-            this.breadcrumbs.set(newPath);
-        } else {
-            this.breadcrumbs.set([...this.breadcrumbs(), topic]);
-        }
-    }
-
-    private _openTopicFromUrl(): void {
-        const path = this._appLocation.get().split('/').slice(2);
-        if (path.length) {
-            for (const topic of path) {
-                this.openTopic(topic);
-            }
-        }
+    public ngOnDestroy(): void {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
     }
 }
