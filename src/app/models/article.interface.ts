@@ -1,4 +1,5 @@
 export interface Article {
     title: string;
-    html: string;
+    html?: string;
+    md?: string;
 }

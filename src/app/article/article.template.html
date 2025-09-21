@@ -21,7 +21,13 @@
                 <mat-icon>content_copy</mat-icon>
             </button>
         </div>
+        @if (article()?.md) {
+        <article>
+            <div [innerHTML]="md.render(article()!.md!)"></div>
+        </article>
+        } @else {
         <div [innerHTML]="article()?.html"></div>
+        }
     </mat-card-content>
 </mat-card>
 
