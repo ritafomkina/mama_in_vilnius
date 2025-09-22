@@ -1,0 +1,42 @@
+<mat-grid-list class="wrapper" cols="2">
+    <mat-grid-tile>
+        <div class="editor">
+            <div class="form">
+                <mat-form-field>
+                    <mat-label>Title</mat-label>
+                    <input
+                        matInput
+                        [(ngModel)]="userInput.title"
+                        (ngModelChange)="userInputChanged()"
+                    />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Content</mat-label>
+                    <textarea
+                        rows="20"
+                        matInput
+                        [(ngModel)]="userInput.md"
+                        (ngModelChange)="userInputChanged()"
+                    ></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-tab-group>
+            <mat-tab label="article">
+                <app-article [article]="article()"></app-article>
+            </mat-tab>
+            <mat-tab label="html">
+                <pre>
+                    {{ article().html }}
+                </pre>
+            </mat-tab>
+            <mat-tab label="json">
+                <pre>
+                    {{ article() | json }}
+                </pre>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-grid-tile>
+</mat-grid-list>
