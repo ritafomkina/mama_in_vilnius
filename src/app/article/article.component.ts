@@ -1,4 +1,6 @@
 import { Component, inject, input } from '@angular/core';
+import { NgOptimizedImage, Location } from '@angular/common';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -8,12 +10,13 @@ import {
     MatSnackBarRef,
     SimpleSnackBar,
 } from '@angular/material/snack-bar';
-import { NgOptimizedImage } from '@angular/common';
-import { Article } from '../models/article.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { Location } from '@angular/common';
+
 import { Clipboard } from '@angular/cdk/clipboard';
+
+import { Article } from '../models/article.interface';
+import { MarkdownService } from '../markdown.service';
 
 @Component({
     selector: 'app-article',
@@ -34,6 +37,8 @@ export class ArticleComponent {
     private readonly _clipboard: Clipboard = inject(Clipboard);
     private readonly _snackbar: MatSnackBar = inject(MatSnackBar);
     private readonly _config: MatSnackBarConfig = new MatSnackBarConfig();
+
+    public md = inject(MarkdownService);
 
     readonly article = input<Article>();
 
