@@ -17,6 +17,7 @@ import { Clipboard } from '@angular/cdk/clipboard';
 
 import { Article } from '../models/article.interface';
 import { MarkdownService } from '../markdown.service';
+import { SafeHtmlPipe } from '../safe-html.pipe';
 
 @Component({
     selector: 'app-article',
@@ -28,6 +29,7 @@ import { MarkdownService } from '../markdown.service';
         NgOptimizedImage,
         MatIconModule,
         MatTooltipModule,
+        SafeHtmlPipe
     ],
     templateUrl: 'article.template.html',
     styleUrl: 'article.style.scss',

@@ -9,7 +9,7 @@ export class MarkdownService {
     // full options list (defaults)
     private md = markdownit({
         // Enable HTML tags in source
-        html: false,
+        html: true,
 
         // Use '/' to close single tags (<br />).
         // This is only for full CommonMark compatibility.

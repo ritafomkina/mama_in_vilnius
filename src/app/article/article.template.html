@@ -23,10 +23,10 @@
         </div>
         @if (article()?.md) {
         <article>
-            <div [innerHTML]="md.render(article()!.md!)"></div>
+            <div [innerHTML]="md.render(article()!.md!) | safeHtml"></div>
         </article>
         } @else {
-        <div [innerHTML]="article()?.html"></div>
+        <div [innerHTML]="article()?.html | safeHtml"></div>
         }
     </mat-card-content>
 </mat-card>
