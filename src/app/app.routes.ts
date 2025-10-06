@@ -4,6 +4,8 @@ import { TOPICS } from '@core/constants';
 
 import { Breadcrumb, FaqRouterData, Topic } from '@models';
 
+import { environment } from '../environments/environment';
+
 function parsTopicsToRoutes(
     path: string,
     articlePath: string,
@@ -96,13 +98,17 @@ export const routes: Routes = [
         loadComponent: async () =>
             import('./about-author/about-author.component'),
     },
-    // {
-    //     path: 'md-editor',
-    //     loadComponent: () =>
-    //         import('./md-editor/md-editor.component').then(
-    //             (m) => m.MdEditorComponent,
-    //         ),
-    // },
+    ...(environment.production
+        ? []
+        : [
+              {
+                  path: 'md-editor',
+                  loadComponent: () =>
+                      import('./md-editor/md-editor.component').then(
+                          (m) => m.MdEditorComponent,
+                      ),
+              },
+          ]),
     {
         path: '**',
         redirectTo: 'faq',

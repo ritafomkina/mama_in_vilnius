@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
     selector: 'app-footer',
     standalone: true,
@@ -9,4 +11,6 @@ import { RouterLink } from '@angular/router';
     imports: [RouterLink],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent {}
+export class FooterComponent {
+    public production = environment.production;
+}
