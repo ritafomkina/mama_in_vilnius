@@ -90,12 +90,6 @@ export const routes: Routes = [
         ],
         TOPICS,
     ),
-    {
-        path: 'about-author',
-        title: 'Про автора',
-        loadComponent: async () =>
-            import('./about-author/about-author.component'),
-    },
     // {
     //     path: 'md-editor',
     //     loadComponent: () =>

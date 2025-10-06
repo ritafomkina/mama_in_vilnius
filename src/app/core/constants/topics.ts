@@ -157,6 +157,6 @@ export const TOPICS: Topic[] = [
     },
     {
         id: 'say-thank-you',
-        title: 'Как сказать спасибо автору гайда',
+        title: 'Как сказать спасибо авторам гайда',
     },
 ];

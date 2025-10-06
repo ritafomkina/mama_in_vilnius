@@ -1,8 +1,10 @@
 <div
     class="position-relative h-100 d-flex align-items-center pointer w-100 px-3 header"
 >
-    <a routerLink="about-author" class="start-50 link link_thankyou"
-        >Про автора</a
+    <a
+        [routerLink]="['faq', 'say-thank-you']"
+        class="start-50 link link_thankyou"
+        >Как сказать спасибо авторам гайда</a
     >
     <div class="h-100 d-flex flex-column justify-content-center">
         <p class="m-0">Created by moms in Vilnius</p>
@@ -10,6 +12,12 @@
             Idea & Implementation:
             <a href="https://t.me/welcomemomsbot" target="_blank" class="link"
                 >RitaFo</a
+            >
+        </p>
+        <p class="m-0">
+            Technical support:
+            <a href="https://t.me/strepko" target="_blank" class="link"
+                >Vladimir Grigorishin</a
             >
         </p>
     </div>
