@@ -8,7 +8,6 @@ import { environment } from '../environments/environment';
 
 function parsTopicsToRoutes(
     path: string,
-    articlePath: string,
     breadcrumbs: Breadcrumb[],
     topics: Topic[],
 ) {
@@ -22,6 +21,7 @@ function parsTopicsToRoutes(
         };
         const data: FaqRouterData = {
             title: topic.title,
+            articlePath: topic.articlePath,
             breadcrumbs,
         };
         if (topic.topics?.length) {
@@ -33,7 +33,6 @@ function parsTopicsToRoutes(
                 { ...route, data },
                 ...parsTopicsToRoutes(
                     topicPath,
-                    articlePath + '/' + topic.id,
                     [
                         ...breadcrumbs,
                         {
@@ -45,7 +44,6 @@ function parsTopicsToRoutes(
                 ),
             );
         } else {
-            data.articlePath = articlePath + '/' + topic.id;
             routes.push({ ...route, data });
         }
     }
@@ -79,7 +77,6 @@ export const routes: Routes = [
     },
     ...parsTopicsToRoutes(
         'faq',
-        'articles',
         [
             {
                 path: '',
