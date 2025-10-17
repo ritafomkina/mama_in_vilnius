@@ -1,3 +1,5 @@
+<app-three (select)="handleThreeSelect($event)"></app-three>
+
 <mat-grid-list class="wrapper" cols="2">
     <mat-grid-tile>
         <div class="editor">
@@ -6,7 +8,7 @@
                     <mat-label>Title</mat-label>
                     <input
                         matInput
-                        [(ngModel)]="userInput.title"
+                        [(ngModel)]="title"
                         (ngModelChange)="userInputChanged()"
                     />
                 </mat-form-field>
@@ -15,7 +17,7 @@
                     <textarea
                         rows="20"
                         matInput
-                        [(ngModel)]="userInput.md"
+                        [(ngModel)]="md"
                         (ngModelChange)="userInputChanged()"
                     ></textarea>
                 </mat-form-field>
