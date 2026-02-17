@@ -1,5 +1,4 @@
 :host {
-    height: 90px;
     position: absolute;
     z-index: 1000;
     bottom: 0;
@@ -26,7 +25,6 @@
 
 @media screen and (max-width: 780px) {
     :host {
-        height: 150px;
         .header {
             justify-content: center;
             gap: 1rem;
